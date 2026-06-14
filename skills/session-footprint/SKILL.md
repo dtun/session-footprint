@@ -32,6 +32,12 @@ Run the bundled, stdlib-only script with the counts:
 python3 footprint.py --output <N> --input <N> --cached <N>
 ```
 
+Or run it from the repo without copying anything (needs `npx`):
+
+```bash
+npx github:dtun/session-footprint --output <N> --input <N> --cached <N>
+```
+
 Or let it parse / find a transcript (convenience, harness-specific):
 
 ```bash

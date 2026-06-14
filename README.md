@@ -21,6 +21,14 @@ A session's cost lives in three token counts — **output** (generated), **input
 
 ## Usage
 
+Run it straight from the repo, no clone or copy (needs `python3` and `node`/`npx`):
+
+```bash
+npx github:dtun/session-footprint --output 43903 --input 9726 --cached 1130807
+```
+
+Or call the script directly:
+
 ```bash
 # Pass the three token counts:
 python3 skills/session-footprint/footprint.py --output 43903 --input 9726 --cached 1130807

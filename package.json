@@ -1,0 +1,28 @@
+{
+  "name": "session-footprint",
+  "version": "0.1.0",
+  "description": "Estimate the environmental footprint (energy, water, tree-equivalents) of an agent session from its token usage.",
+  "bin": {
+    "session-footprint": "skills/session-footprint/footprint.py"
+  },
+  "files": [
+    "skills/"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "MIT",
+  "author": "Danny Tunney",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtun/session-footprint.git"
+  },
+  "keywords": [
+    "llm",
+    "agent",
+    "sustainability",
+    "carbon",
+    "water",
+    "skill"
+  ]
+}

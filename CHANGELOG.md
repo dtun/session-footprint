@@ -9,6 +9,12 @@ The released version is mirrored in the `metadata.version` field of
 
 ## [Unreleased]
 
+### Added
+
+- Run from the repo with no clone or copy: `npx github:dtun/session-footprint
+  --output N --input N --cached N`. A `package.json` `bin` points npx at
+  `footprint.py`, which executes via its `python3` shebang.
+
 ## [0.1.0] — 2026-06-14
 
 Initial release.
