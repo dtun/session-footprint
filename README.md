@@ -1,9 +1,9 @@
 # session-footprint
 
-A harness-agnostic agent skill that estimates the **environmental** footprint of a session — energy, water, and tree-equivalents — from its token usage, and prints it as a small receipt.
+An agent skill that estimates the **environmental** footprint of a session — energy, water, and tree-equivalents — from its token usage, and prints it as a small receipt.
 
 > Most usage meters report **dollars**. This one reports **water, energy, and trees**.
-> It is read-only and harness-neutral: give it token counts, it prints. It never edits files, touches git, or sends data anywhere.
+> Read-only: give it token counts, it prints. It never edits files, touches git, or sends data anywhere.
 
 ## The idea
 
@@ -15,10 +15,6 @@ A session's cost lives in three token counts — **output** (generated), **input
 
 "Deforestation" has no direct datacenter mechanism, so it's framed honestly as tree-equivalents rather than implying literal logging.
 
-## Harness-agnostic by design
-
-The conversion is pure arithmetic over three numbers, so it runs the same under any agent. Only *getting* the token counts is harness-specific, and that step is delegated to the running agent (a usage command, a usage API, or a transcript). The math — and the formula — live in [`SKILL.md`](skills/session-footprint/SKILL.md), so an agent can compute by hand even without the script.
-
 ## The honest caveat
 
 **These are order-of-magnitude estimates, not measurements.** Providers publish no per-token water or energy figures, so the skill leans on datacenter averages and inference-energy research that carry easily 5–10× uncertainty. Every run prints its factors and a disclaimer next to the numbers. The point is to *inform a sense of scale*, not to audit.
@@ -26,10 +22,10 @@ The conversion is pure arithmetic over three numbers, so it runs the same under 
 ## Usage
 
 ```bash
-# Harness-agnostic core — pass the three counts:
+# Pass the three token counts:
 python3 skills/session-footprint/footprint.py --output 43903 --input 9726 --cached 1130807
 
-# Convenience — parse / find an Anthropic-style JSONL transcript:
+# Or have it read an Anthropic-style JSONL transcript:
 python3 skills/session-footprint/footprint.py --transcript path/to/session.jsonl
 python3 skills/session-footprint/footprint.py            # scan known locations
 python3 skills/session-footprint/footprint.py --json     # machine-readable

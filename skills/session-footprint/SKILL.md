@@ -12,8 +12,6 @@ metadata:
 
 Turn a session's token usage into an **environmental** estimate — energy (Wh), water (L), and tree-equivalents — instead of dollars, and present it as a small receipt.
 
-**Harness-agnostic.** The conversion is pure arithmetic over three token counts, so it works the same in any agent or harness. Only *how you obtain the token counts* is harness-specific — that step is delegated to you, the running agent.
-
 **This is an estimate, not a measurement.** Providers publish no per-token water or energy figures, so this leans on datacenter averages and inference-energy research. The factors carry easily 5–10× uncertainty. Always print the factors and the disclaimer next to the numbers — never present them as precise.
 
 ## Step 1 — Get this session's token counts

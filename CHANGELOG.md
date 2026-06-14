@@ -17,9 +17,8 @@ Initial release.
 
 - `session-footprint` skill: convert a session's token usage (output / input /
   cached) into an estimated environmental footprint — energy (Wh), water (L),
-  and tree-equivalents. Harness-agnostic: the contract is three token counts in,
-  a footprint out, and the inline formula in `SKILL.md` computes by hand with no
-  script at all.
+  and tree-equivalents. The contract is three token counts in, a footprint out;
+  the inline formula in `SKILL.md` computes by hand with no script at all.
 - [`footprint.py`](skills/session-footprint/footprint.py) — self-contained,
   stdlib-only converter. Takes token counts (`--output/--input/--cached`); as a
   convenience also parses an Anthropic-style JSONL transcript (`--transcript`) or

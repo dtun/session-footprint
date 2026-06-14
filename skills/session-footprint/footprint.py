@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Estimate the environmental footprint of an LLM agent session.
 
-Harness-agnostic. The core is pure arithmetic over token counts, so it runs the
-same under any agent or harness. Give it token counts directly:
+Reports energy (Wh), water (L), and tree-equivalents from a session's token
+usage. The core is pure arithmetic over token counts. Give it counts directly:
 
     python3 footprint.py --output 43903 --input 9726 --cached 1130807
 
